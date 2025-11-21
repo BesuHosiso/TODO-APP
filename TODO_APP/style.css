@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+:root {
+  --background-color: #101114;
+  --primary-color: #1c1d20;
+  --secondary-color: #4a4d57;
+  --text-color: #f9f9f9;
+  --accent-color: #ff5722;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16pt;
+  color: var(--text-color);
+  font-family: "Sora", sans-serif;
+}
+
+body {
+  min-height: 100dvh;
+  padding: 10px;
+  background: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.wraper {
+  width: 700px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+input {
+  padding: 12px 20px;
+  background: none;
+  width: 100%;
+  border-radius: 1000px;
+  border: 1px solid var(--secondary-color);
+  font: inherit;
+  color: var(--text-color);
+  caret-color: var(--accent-color);
+}
+
+input:focus {
+  outline: none;
+}
+
+form {
+  position: relative;
+}
+
+#add-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 30px;
+  border: none;
+  background: var(--accent-color);
+  border-radius: 1000px;
+  color: var(--background-color);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.todo {
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background: var(--primary-color);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.todo .todo-text {
+  padding: 15px;
+  padding-right: 0;
+  flex-grow: 1;
+  transition: 200ms ease;
+}
+
+.del-btn {
+  padding: 3px;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.del-btn svg {
+  transition: 200ms;
+}
+
+ .del-btn:hover svg {
+  fill: red;
+}
+
+#custom-checkbox {
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+
+input[type="checkbox"]:checked ~ #custom-checkbox {
+  background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked ~ #custom-checkbox svg {
+  fill: var(--primary-color);
+}
+
+input[type="checkbox"]:checked ~ .todo-text {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 500px) {
+       html {
+         font-size: 12pt;
+       }
+      #add-btn {
+        position: unset;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: auto;
+      }
+      h1 {
+        margin-top: 50px;
+        font-size: 15vw;
+      }
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
